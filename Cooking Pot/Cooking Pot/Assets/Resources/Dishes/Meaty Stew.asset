@@ -60,4 +60,4 @@ MonoBehaviour:
   reignOfGiants: 0
   shipWrecked: 0
   priority: 0
-  cookTime: 0
+  cookTime: 10

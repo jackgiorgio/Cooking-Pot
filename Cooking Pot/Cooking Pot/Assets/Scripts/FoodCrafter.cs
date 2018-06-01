@@ -87,18 +87,22 @@ public class FoodCrafter : MonoBehaviour
 	public void UpdateResult()
 	{
 		Dish result = GetResult();
-		CreateDish(result);
+        Pot pot = GameObject.FindObjectOfType<Pot>();
+        pot.Cook(result.cookTime);
+		StartCoroutine(CreateDish(result));
 	}
 
-	void CreateDish (Dish dish)
+	private IEnumerator CreateDish (Dish dish)
 	{
-		GameObject dishObj = Instantiate(dishPrefab, resultsParent);
-		DishDisplay display = dishObj.GetComponent<DishDisplay>();
-		if (display != null)
-			display.Setup(dish);
+        yield return new WaitForSeconds(dish.cookTime);
 
-		//Animator anim = dishObj.GetComponent<Animator>();
-		//anim.SetBool("Pickup", false);
+        GameObject dishObj = Instantiate(dishPrefab, resultsParent);
+		DishDisplay display = dishObj.GetComponent<DishDisplay>();
+        if (display != null)
+        {
+            display.Setup(dish);
+        }		
+
 	}
 
 
@@ -379,5 +383,7 @@ public class FoodCrafter : MonoBehaviour
             return null;
         }
     }
+
+
 
 

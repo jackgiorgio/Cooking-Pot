@@ -36,7 +36,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 		startPosition = transform.position;
 		startParent = transform.parent;
 
-		animator.SetTrigger("Pickup");
+		//animator.SetTrigger("Pickup");
 
 		transform.SetParent(itemDraggerParent);
 
