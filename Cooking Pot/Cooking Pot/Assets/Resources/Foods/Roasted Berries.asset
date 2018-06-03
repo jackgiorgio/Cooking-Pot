@@ -9,18 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f09845925f346a4998a1f4062880cca, type: 3}
-  m_Name: Meat
+  m_Name: Roasted Berries
   m_EditorClassIdentifier: 
-  name: Meat
-  icon: {fileID: 21300000, guid: 737539026f25ff74a88633ea63b2d867, type: 3}
+  name: Roasted Berries
+  icon: {fileID: 21300000, guid: 3d26a730c2e99f448a3c6e01a35c195b, type: 3}
   discoveryText: 
   customSound: 
   cookable: 1
   health: 0
-  hunger: 0
+  hunger: 12.5
   sanity: 0
-  perish: 0
-  fruit: 0
+  perish: 3
+  fruit: 0.5
   egg: 0
   meat: 1
   veggie: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   eggplant: 0
   roastedBirchnut: 0
   seed: 0
-  berries: 0
+  berries: 1
   drumstick: 0
   lichen: 0
   eel: 0

@@ -42,7 +42,7 @@ public class Pot : MonoBehaviour {
         {
             potState = PotState.cooking;
             anim.SetTrigger("Cook");
-            StartCoroutine(Harvest(time));
+            StartCoroutine(Harvest(1.0f));
         }
     }
 

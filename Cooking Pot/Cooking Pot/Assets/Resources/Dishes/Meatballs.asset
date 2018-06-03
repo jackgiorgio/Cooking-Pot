@@ -16,10 +16,10 @@ MonoBehaviour:
   discoveryText: 
   customSound: 
   cookable: 0
-  health: 0
-  hunger: 0
-  sanity: 0
-  perish: 0
+  health: 3
+  hunger: 62.5
+  sanity: 5
+  perish: 10
   fruit: 0
   egg: 0
   meat: 0
@@ -60,4 +60,4 @@ MonoBehaviour:
   reignOfGiants: 0
   shipWrecked: 0
   priority: -1
-  cookTime: 0
+  cookTime: 10

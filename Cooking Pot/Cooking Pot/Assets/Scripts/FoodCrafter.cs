@@ -31,6 +31,7 @@ public class FoodCrafter : MonoBehaviour
 	private void Start()
 	{
 		recipes = Resources.LoadAll<Dish>("Dishes");
+
 	}
 
 	public void AddItem(Food food, int slot)
@@ -88,14 +89,15 @@ public class FoodCrafter : MonoBehaviour
 	{
 		Dish result = GetResult();
         Pot pot = GameObject.FindObjectOfType<Pot>();
-        pot.Cook(result.cookTime);
+        //pot.Cook(result.cookTime);
+        pot.Cook(1f);
 		StartCoroutine(CreateDish(result));
-	}
+    }
 
-	private IEnumerator CreateDish (Dish dish)
+    private IEnumerator CreateDish (Dish dish)
 	{
-        yield return new WaitForSeconds(dish.cookTime);
-
+        //yield return new WaitForSeconds(dish.cookTime);
+        yield return new WaitForSeconds(1f);
         GameObject dishObj = Instantiate(dishPrefab, resultsParent);
 		DishDisplay display = dishObj.GetComponent<DishDisplay>();
         if (display != null)
@@ -226,6 +228,7 @@ public class FoodCrafter : MonoBehaviour
         if (nd.meat > 0 & nd.inedible == 0)
         {
             dishes.Add(SelectDish("Meatballs"));
+            Debug.Log("found Meatballs!");
         }
         if (nd.watermelon > 0 & nd.frozen > 0 & nd.twigs > 0 & nd.meat == 0 & nd.veggie == 0 & nd.egg == 0 & nd.reignOfGiants > 0)
         {
@@ -290,6 +293,7 @@ public class FoodCrafter : MonoBehaviour
         if (nd.meat >= 3 & nd.inedible ==0)
         {
             dishes.Add(SelectDish("Meaty Stew"));
+            Debug.Log("found meaty stew!");
         }
         if (dishes.Count == 0)
         {
@@ -304,6 +308,7 @@ public class FoodCrafter : MonoBehaviour
             float max = -1;
             foreach (Dish dish in dishes)
             {
+                Debug.Log("choosing dish");
                 Debug.Log(dish.priority);
                 if (dish.priority > max)
                 {

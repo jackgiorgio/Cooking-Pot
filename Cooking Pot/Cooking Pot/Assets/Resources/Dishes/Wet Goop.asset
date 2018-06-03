@@ -19,7 +19,7 @@ MonoBehaviour:
   health: 0
   hunger: 0
   sanity: 0
-  perish: 0
+  perish: 6
   fruit: 0
   egg: 0
   meat: 0
@@ -60,4 +60,4 @@ MonoBehaviour:
   reignOfGiants: 0
   shipWrecked: 0
   priority: -2
-  cookTime: 0
+  cookTime: 5
