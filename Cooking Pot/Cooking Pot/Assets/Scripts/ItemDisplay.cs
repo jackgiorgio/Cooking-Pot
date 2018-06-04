@@ -9,10 +9,16 @@ public class ItemDisplay : MonoBehaviour {
 	public Item item;
 	public Image icon;
 	public TextMeshProUGUI nameText;
+    public int amount = 1;
+    public TextMeshProUGUI amountText;
 
     private void Start()
     {
         Setup(item);
+        if (amount == 1)
+        {
+            amountText.text = "";
+        }
     }
     public void Setup (Item _item)
 	{

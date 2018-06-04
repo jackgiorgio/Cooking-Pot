@@ -33,7 +33,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             itemObj = DragHandler.objBeingDragged;
             itemObj.transform.SetParent(transform);
-            itemObj.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+            itemObj.GetComponent<RectTransform>().sizeDelta = new Vector2(90, 90);
             itemObj.transform.position = transform.position;
             Inventory.instance.AddItem(DragHandler.GetItemBeingDragged(), slot);
         }
@@ -57,6 +57,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
         Inventory.instance.AddItem(display.item, slot);
     }
+
 
 
 }

@@ -22,7 +22,7 @@ MonoBehaviour:
   health: 20
   hunger: 75
   sanity: 5
-  perish: 20
+  perish: 0.2
   fruit: 0
   egg: 0
   meat: 0
