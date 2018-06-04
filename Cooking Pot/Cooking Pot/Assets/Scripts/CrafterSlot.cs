@@ -13,13 +13,12 @@ public class CrafterSlot : MonoBehaviour, IDropHandler {
 	{
 		Debug.Log("OnDrop");
 
-		if (!itemObj)
+		if (!itemObj & DragHandler.GetItemBeingDragged().isCookable)
 		{
 			itemObj = DragHandler.objBeingDragged;
 			itemObj.transform.SetParent(transform);
 			itemObj.transform.position = transform.position;
-
-			FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
+            FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
 		}
 	}
 
@@ -34,5 +33,18 @@ public class CrafterSlot : MonoBehaviour, IDropHandler {
 			}
 		}
 	}
+
+    public void RemoveItem(int _slot)
+    {
+        FoodCrafter.instance.RemoveItem(_slot);
+        itemObj =null;
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+          }
+    }
+
+
+
 
 }

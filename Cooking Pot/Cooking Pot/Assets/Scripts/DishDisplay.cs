@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DishDisplay : MonoBehaviour {
+public class DishDisplay : FoodDisplay {
 
     public Dish dish;
-    public Image icon;
-    public TextMeshProUGUI nameText;
 
-    private void Start()
+    public void SetUpItem()
     {
-        Setup(dish);
-    }
-    public void Setup(Dish _dish)
-    {
-        dish = _dish;
-        icon.sprite = dish.icon;
-        nameText.text = dish.name;
+        item.name = dish.name;
+        item.icon = dish.icon;
     }
 }

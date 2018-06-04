@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Unagi
   icon: {fileID: 21300000, guid: ae4d1f01ad3888c42a58048d34be787b, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

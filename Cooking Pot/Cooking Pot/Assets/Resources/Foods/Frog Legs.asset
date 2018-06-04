@@ -13,9 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Frog Legs
   icon: {fileID: 21300000, guid: c0271a4031304a94d9fb5b5336bfc8ac, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
-  cookable: 0
+  cookable: 1
   health: 0
   hunger: 12.5
   sanity: -10

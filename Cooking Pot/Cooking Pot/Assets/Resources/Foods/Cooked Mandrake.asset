@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cooked Mandrake
   icon: {fileID: 21300000, guid: 039f0142ad8a7914ea923bc881308859, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

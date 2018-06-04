@@ -8,7 +8,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	public static GameObject objBeingDragged;
 	public static Item GetItemBeingDragged ()
 	{
-		return objBeingDragged.GetComponent<ItemDisplay>().item;
+            return objBeingDragged.GetComponent<ItemDisplay>().item;
 	}
 
     public static Food GetFoodBeingDraged()
@@ -16,7 +16,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         return objBeingDragged.GetComponent<FoodDisplay>().food;
     }
 
-	Vector3 startPosition;
+
+    Vector3 startPosition;
 	Transform startParent;
 
 	Transform itemDraggerParent;
@@ -59,6 +60,15 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 		{
 			transform.position = startPosition;
 			transform.SetParent(startParent);
+
+            //recreate the connections just like in the ondrop function
+
+            InventorySlot slot = gameObject.GetComponentInParent<InventorySlot>();
+            if (slot)
+            {
+                slot.AddItemToInventory();
+            }
+
 		}
 
 		AudioManager.instance.Play("Unclick");

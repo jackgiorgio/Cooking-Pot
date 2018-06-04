@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Eel
   icon: {fileID: 21300000, guid: d60e9a335b21f9b4893548e89284c29d, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

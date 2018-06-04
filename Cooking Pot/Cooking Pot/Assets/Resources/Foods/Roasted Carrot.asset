@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Roasted Carrot
   icon: {fileID: 21300000, guid: 62299018d632a924f9eec3f397bd668a, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

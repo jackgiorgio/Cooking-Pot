@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Roasted Birchnut
   icon: {fileID: 21300000, guid: aeb345691a7a3654db8f64bfb8f366e1, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

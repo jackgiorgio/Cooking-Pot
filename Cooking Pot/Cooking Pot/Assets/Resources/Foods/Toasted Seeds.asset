@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Toasted Seeds
   icon: {fileID: 21300000, guid: 57dc972ef3e1b8d448c7ad9d128571da, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Honey Nuggets
   icon: {fileID: 21300000, guid: 7bc11ec476ea57548852fb338e6b2f75, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

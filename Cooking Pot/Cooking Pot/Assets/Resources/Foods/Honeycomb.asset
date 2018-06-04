@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Honeycomb
   icon: {fileID: 21300000, guid: 8e2d738bd8d6835468fb3731856215db, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Green Cap
   icon: {fileID: 21300000, guid: 1711e0ce1b0b0b242acd2e47b84ef66a, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

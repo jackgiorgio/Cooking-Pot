@@ -37,7 +37,7 @@ public class FoodCrafter : MonoBehaviour
 	public void AddItem(Food food, int slot)
 	{
 		//Debug.Log("Add item to Crafter: " + item.name);
-        if(food.cookable)
+        if(food.isCookable)
         {
 		    if (slot == 1)
 		    {
@@ -94,16 +94,21 @@ public class FoodCrafter : MonoBehaviour
 		StartCoroutine(CreateDish(result));
     }
 
-    private IEnumerator CreateDish (Dish dish)
+    private IEnumerator CreateDish (Dish _dish)
 	{
         //yield return new WaitForSeconds(dish.cookTime);
         yield return new WaitForSeconds(1f);
         GameObject dishObj = Instantiate(dishPrefab, resultsParent);
+        dishObj.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
 		DishDisplay display = dishObj.GetComponent<DishDisplay>();
+        Debug.Log(display.dish.name);
         if (display != null)
         {
-            display.Setup(dish);
-        }		
+            display.dish = _dish;
+            display.food = _dish;
+            display.Setup(_dish);
+
+        }
 
 	}
 
@@ -372,7 +377,6 @@ public class FoodCrafter : MonoBehaviour
 
 
             d.cookable = false;
-        Debug.Log(d.meat);
             return d;
         }
 
@@ -382,6 +386,7 @@ public class FoodCrafter : MonoBehaviour
             {
                 if (dish.name == dishName)
                 {
+                Debug.Log("found " + dish.name);
                     return dish;
                 }
             }

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Flower Salad
   icon: {fileID: 21300000, guid: c4af84633a0d4824e92bf9871ff015b6, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

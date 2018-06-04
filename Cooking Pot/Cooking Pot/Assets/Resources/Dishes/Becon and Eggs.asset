@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bacon and Eggs
   icon: {fileID: 21300000, guid: b1178d7f8bec1f4409127861c7c191c5, type: 3}
+  isCookable: 0
+  isStackable: 1
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

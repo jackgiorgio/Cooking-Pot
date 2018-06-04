@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Foliage
   icon: {fileID: 21300000, guid: 2cd29028c150eb342be140fcd3f66cd3, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

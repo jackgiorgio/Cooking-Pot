@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Melonsicle
   icon: {fileID: 21300000, guid: 1a755040ccf4d2941bdd635bbb9be5b7, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 0

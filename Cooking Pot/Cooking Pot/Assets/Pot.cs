@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Pot : MonoBehaviour {
 
     public enum PotState { cooking,open,idle,finish}
+    public GameObject resultPanel;
+    public CrafterSlot[] slots;
 
     private Animator anim;
     public PotState potState = PotState.idle;
@@ -15,31 +17,41 @@ public class Pot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-        craftPanel.SetActive(false);
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        HandlePot();
 
-    public void Open()
+    }
+
+    public void OpenOrClose()
     {
         if (potState == PotState.idle)
         {
             potState = PotState.open;
             anim.SetTrigger("Open");
             craftPanel.SetActive(true);
+            return;       
         }
-        GetComponent<Button>().interactable = false;
+        if (potState == PotState.open)
+        {
+            potState = PotState.idle;
+            anim.SetTrigger("Close");
+            craftPanel.SetActive(false);
 
+        }
     }
 
     public void Cook(float time)
     {
         if (potState == PotState.open)
         {
+            foreach(CrafterSlot cs in slots)
+            {
+                cs.RemoveItem(cs.slot);
+            }
             potState = PotState.cooking;
             anim.SetTrigger("Cook");
             StartCoroutine(Harvest(1.0f));
@@ -54,8 +66,19 @@ public class Pot : MonoBehaviour {
 
     }
 
+    public void HandlePot()
+    {
+        if (resultPanel.transform.childCount == 1 & potState == PotState.cooking)
+        {
+            potState = PotState.finish;
+        }
 
+        if (resultPanel.transform.childCount == 0 & potState == PotState.finish)
+        {
+            potState = PotState.idle;
+            anim.SetTrigger("Close");
+        }
 
-
+    }
 
 }

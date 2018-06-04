@@ -13,9 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Batilisk Wing
   icon: {fileID: 21300000, guid: 0e192d9e1093b5c4a98c8977a6c9ab35, type: 3}
+  isCookable: 0
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
-  cookable: 1
+  cookable: 0
   health: 3
   hunger: 12.5
   sanity: -10

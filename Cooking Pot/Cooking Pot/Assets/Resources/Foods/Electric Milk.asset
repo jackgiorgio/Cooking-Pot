@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Electric Milk
   icon: {fileID: 21300000, guid: 91cdd91349a21ab4aa8961bd5c2602e0, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1

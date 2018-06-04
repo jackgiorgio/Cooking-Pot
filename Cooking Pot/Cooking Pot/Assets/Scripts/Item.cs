@@ -7,7 +7,9 @@ public class Item : ScriptableObject {
 
 	public new string name;
     public Sprite icon;
-
+    public bool isCookable;
+    public bool isStackable;
+    public bool isEatable;
     
     [TextArea]
     public string discoveryText;

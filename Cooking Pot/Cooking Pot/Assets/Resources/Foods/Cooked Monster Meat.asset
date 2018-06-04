@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cooked Monster Meat
   icon: {fileID: 21300000, guid: 9ea44b8ea30ccf743b807701b357c290, type: 3}
+  isCookable: 1
+  isStackable: 0
+  isEatable: 1
   discoveryText: 
   customSound: 
   cookable: 1
