@@ -99,7 +99,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
-        Debug.Log("hi");
 		objBeingDragged = null;
 		canvasGroup.blocksRaycasts = true;
         BacktoPrviousPosition();

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Wilson : MonoBehaviour, IDropHandler{
 
     private Animator anim;
     public GameObject itemObj;
+    public Image hungerBar, healthBar, sanityBar;
 
     [SerializeField]
     private float health;
@@ -33,14 +35,19 @@ public class Wilson : MonoBehaviour, IDropHandler{
             if (value > maxHealth)
             {
                 health = maxHealth;
+                healthBar.fillAmount = 1;
             }
             else if (value < 0)
             {
                 health = 0;
+                healthBar.fillAmount = 0;
             }
             else
             {
                 health = value;
+                float percentage = value / maxHealth;
+                healthBar.fillAmount = percentage;
+
             }
         }
     }
@@ -55,14 +62,18 @@ public class Wilson : MonoBehaviour, IDropHandler{
             if (value > maxHunger)
             {
                 hunger = maxHunger;
+                hungerBar.fillAmount = 1;
             }
             else if (value < 0)
             {
                 hunger = 0;
+                hungerBar.fillAmount = 0;
             }
             else
             {
                 hunger = value;
+                float percentage = value / maxHunger;
+                hungerBar.fillAmount = percentage;
             }
         }
     }
@@ -77,23 +88,27 @@ public class Wilson : MonoBehaviour, IDropHandler{
             if (value > maxSanity)
             {
                 sanity = maxSanity;
+                sanityBar.fillAmount = 1;
             }
             else if (value < 0)
             {
                 sanity = 0;
+                sanityBar.fillAmount = 0;
             }
             else
             {
                 sanity = value;
+                float percentage = value / maxHunger;
+                sanityBar.fillAmount = percentage;
             }
         }
     }
 
     private void Start()
     {
-        Health = 0;
-        Hunger = 0;
-        Sanity = 0;
+        Health = 15;
+        Hunger = 23;
+        Sanity = 40;
         anim = GetComponent<Animator>();
     }
 
