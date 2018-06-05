@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Roasted Berries
   icon: {fileID: 21300000, guid: 3d26a730c2e99f448a3c6e01a35c195b, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

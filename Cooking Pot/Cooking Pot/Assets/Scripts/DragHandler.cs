@@ -6,7 +6,18 @@ using UnityEngine.EventSystems;
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public static GameObject objBeingDragged;
-	public static Item GetItemBeingDragged ()
+
+    public static ItemDisplay GetItemDisplay()
+    {
+        return objBeingDragged.GetComponent<ItemDisplay>();
+    }
+
+    public static FoodDisplay GetFoodDisplay()
+    {
+        return objBeingDragged.GetComponent<FoodDisplay>();
+    }
+
+    public static Item GetItemBeingDragged ()
 	{
             return objBeingDragged.GetComponent<ItemDisplay>().item;
 	}
@@ -18,9 +29,40 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
 
     Vector3 startPosition;
+    [HideInInspector]
+    public Vector3 StartPosition
+    {
+        get
+        {
+            return startPosition;
+        }
+        set
+        {
+            startPosition = value;
+        }
+    }
 	Transform startParent;
+    [HideInInspector]
+    public Transform StartParent
+    {
+        get
+        {
+            return startParent;
+        }
+        set
+        {
+            startParent = value;
+        }
+    }
 
 	Transform itemDraggerParent;
+    public Transform ItemDraggerParent
+    {
+        get
+        {
+            return itemDraggerParent;
+        }
+    }
 	CanvasGroup canvasGroup;
 	Animator animator;
 
@@ -34,6 +76,10 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		objBeingDragged = gameObject;
+        if (objBeingDragged.GetComponent<FoodDisplay>())
+        {
+            objBeingDragged.GetComponent<FoodDisplay>().DisableBackFrame();
+        }
 		startPosition = transform.position;
 		startParent = transform.parent;
 
@@ -53,13 +99,20 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
+        Debug.Log("hi");
 		objBeingDragged = null;
 		canvasGroup.blocksRaycasts = true;
+        BacktoPrviousPosition();
 
-		if (transform.parent == itemDraggerParent)
-		{
-			transform.position = startPosition;
-			transform.SetParent(startParent);
+		AudioManager.instance.Play("Unclick");
+	}
+
+    public void BacktoPrviousPosition()
+    {
+        if (transform.parent == itemDraggerParent)
+        {
+            transform.position = startPosition;
+            transform.SetParent(startParent);
 
             //recreate the connections just like in the ondrop function
 
@@ -67,10 +120,13 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             if (slot)
             {
                 slot.AddItemToInventory();
+                if (slot.GetComponentInChildren<FoodDisplay>())
+                {
+                    slot.GetComponentInChildren<FoodDisplay>().EnableBackFrame();
+                }
             }
 
-		}
 
-		AudioManager.instance.Play("Unclick");
-	}
+        }
+    }
 }

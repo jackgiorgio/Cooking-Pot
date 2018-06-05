@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Blue Cap
   icon: {fileID: 21300000, guid: e2e7b776be3e9c74da0c45dd69bed07d, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

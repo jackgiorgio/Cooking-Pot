@@ -9,16 +9,36 @@ public class ItemDisplay : MonoBehaviour {
 	public Item item;
 	public Image icon;
 	public TextMeshProUGUI nameText;
-    public int amount = 1;
+    public int Amount
+    {
+        get
+        {
+            return amount;
+        }
+        set
+        {
+            amount = value;
+            if (amount == 1)
+            {
+                amountText.text = "";
+            }
+            else
+            {
+                amountText.text = value.ToString();
+            }
+            
+        }
+    }
+
+
+
+    protected int amount = 1;
     public TextMeshProUGUI amountText;
 
     private void Start()
     {
         Setup(item);
-        if (amount == 1)
-        {
-            amountText.text = "";
-        }
+        Amount = amount;
     }
     public void Setup (Item _item)
 	{
@@ -26,5 +46,10 @@ public class ItemDisplay : MonoBehaviour {
 		icon.sprite = item.icon;
 		nameText.text = item.name;
 	}
+
+    public void Stack(int _amount)
+    {
+        Amount += _amount;
+    }
 
 }

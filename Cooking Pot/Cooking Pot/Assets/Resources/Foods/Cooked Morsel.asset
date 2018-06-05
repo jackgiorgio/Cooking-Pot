@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Morsel
   icon: {fileID: 21300000, guid: da4fe05dbbd0cdd4788df3beb29bd402, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

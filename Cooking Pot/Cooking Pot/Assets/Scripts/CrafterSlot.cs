@@ -18,6 +18,8 @@ public class CrafterSlot : MonoBehaviour, IDropHandler {
 			itemObj = DragHandler.objBeingDragged;
 			itemObj.transform.SetParent(transform);
 			itemObj.transform.position = transform.position;
+            itemObj.GetComponent<FoodDisplay>().EnableBackFrame();
+            itemObj.GetComponent<RectTransform>().localScale = new Vector3(0.8f, 0.8f, 0.8f);
             FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
 		}
 	}

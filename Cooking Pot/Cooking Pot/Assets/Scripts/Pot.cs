@@ -13,6 +13,7 @@ public class Pot : MonoBehaviour {
     public PotState potState = PotState.idle;
 
     public GameObject craftPanel;
+    public Button cookButton;
 
 	// Use this for initialization
 	void Start () {
@@ -79,6 +80,17 @@ public class Pot : MonoBehaviour {
             anim.SetTrigger("Close");
         }
 
+        foreach (CrafterSlot s in slots)
+        {
+            if (!s.itemObj)
+            {
+                cookButton.interactable = false;
+            }
+            else
+            {
+                cookButton.interactable = true;
+            }
+        }
     }
 
 }

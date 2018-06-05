@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Leafy Meat
   icon: {fileID: 21300000, guid: 87263c545074e6f42b8034d326a3faef, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

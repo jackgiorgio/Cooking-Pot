@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Fried Drumstick
   icon: {fileID: 21300000, guid: 857845f6e1a9a314a936faa5a0b2712e, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

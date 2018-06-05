@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Trail Mix
   icon: {fileID: 21300000, guid: 8a39ef9dd0be9554d860c19cf8cedb94, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

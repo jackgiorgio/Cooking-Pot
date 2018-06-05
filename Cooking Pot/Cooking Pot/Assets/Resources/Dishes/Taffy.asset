@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Taffy
   icon: {fileID: 21300000, guid: da28fb369b0dca54faeb3a9e5da15474, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

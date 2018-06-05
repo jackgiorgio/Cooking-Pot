@@ -31,11 +31,40 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         if (itemObj == null || (itemObj !=null & stackable==true & itemBeingDragged.name == itemBeingDropped.name))  
         {
+            //假如物品是食物，则将其重置其腐烂程度
+            if (itemObj)
+            {
+                if (itemObj.GetComponent<FoodDisplay>())
+                {                    
+                    itemObj.GetComponent<FoodDisplay>().AveragePerish(DragHandler.GetFoodDisplay());
+                }
+
+
+                //假如物品可堆叠，则将数量进行堆叠
+                if (itemObj.GetComponent<ItemDisplay>().item.isStackable)
+                {
+                    itemObj.GetComponent<ItemDisplay>().Stack(DragHandler.GetItemDisplay().Amount);
+                }
+            }
+
             itemObj = DragHandler.objBeingDragged;
             itemObj.transform.SetParent(transform);
             itemObj.GetComponent<RectTransform>().sizeDelta = new Vector2(90, 90);
             itemObj.transform.position = transform.position;
+            if (itemObj)
+            {
+                itemObj.GetComponent<FoodDisplay>().EnableBackFrame();
+            }
             Inventory.instance.AddItem(DragHandler.GetItemBeingDragged(), slot);
+            
+            //假如有两个child在transform里
+            if (transform.childCount > 1)
+            {
+                Destroy(itemObj);
+                itemObj = transform.GetChild(0).gameObject;
+            }
+   
+            
         }
     }
 

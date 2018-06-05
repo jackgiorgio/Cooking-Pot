@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Batilisk Wing
   icon: {fileID: 21300000, guid: 262e3e74686e99b42bf58746ff7e1e12, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

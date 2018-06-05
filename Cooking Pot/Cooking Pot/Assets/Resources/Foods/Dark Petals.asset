@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Dark Petals
   icon: {fileID: 21300000, guid: cdb2ed2cc7df9d64785a6ba03703f229, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

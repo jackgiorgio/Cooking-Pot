@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Hot Pumpkin
   icon: {fileID: 21300000, guid: 96d782740972c2b41ad336a20ce8a72c, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

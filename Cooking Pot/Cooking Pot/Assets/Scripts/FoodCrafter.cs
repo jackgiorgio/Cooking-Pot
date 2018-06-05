@@ -107,6 +107,7 @@ public class FoodCrafter : MonoBehaviour
             display.dish = _dish;
             display.food = _dish;
             display.Setup(_dish);
+            display.DisableBackFrame();
 
         }
 

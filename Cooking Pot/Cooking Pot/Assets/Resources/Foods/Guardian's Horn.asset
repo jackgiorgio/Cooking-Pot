@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Guardian's Horn
   icon: {fileID: 21300000, guid: af86ffd899d3437458fe57ba3a965ad2, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

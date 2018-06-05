@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Dragonpie
   icon: {fileID: 21300000, guid: d72e8418aa4b5234789353047b0720ab, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

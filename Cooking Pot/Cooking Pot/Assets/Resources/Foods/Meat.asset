@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Meat
   icon: {fileID: 21300000, guid: 737539026f25ff74a88633ea63b2d867, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

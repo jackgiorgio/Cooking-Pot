@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Fish
   icon: {fileID: 21300000, guid: 830f21941eb28d84b8d0851904b1fa7a, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

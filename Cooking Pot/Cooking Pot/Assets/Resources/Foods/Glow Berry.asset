@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Glow Berry
   icon: {fileID: 21300000, guid: 1e1426be7844a264683f7875308074d6, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

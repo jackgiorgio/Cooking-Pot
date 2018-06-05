@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Red Cap
   icon: {fileID: 21300000, guid: 2c512ee0ba5e6ad438be91b533dcba7c, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

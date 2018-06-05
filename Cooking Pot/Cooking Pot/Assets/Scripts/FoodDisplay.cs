@@ -26,7 +26,6 @@ public class FoodDisplay : ItemDisplay
         set
         {
             percentage = value;
-            Debug.Log(percentage);
             background.fillAmount = percentage;
             if (percentage > 0.6)
             {
@@ -52,10 +51,7 @@ public class FoodDisplay : ItemDisplay
         icon.sprite = item.icon;
         nameText.text = item.name;
         perishTime = food.perish * 480;
-        if (amount == 1)
-        {
-            amountText.text = "";
-        }
+        Amount = amount;
         if (perishTime > 0 & food.perish !=0)
         {
             CountTime(perishTime);
@@ -80,4 +76,23 @@ public class FoodDisplay : ItemDisplay
         } 
     }
 
+    public void DisableBackFrame()
+    {
+        if (backFrame)
+        {
+            backFrame.gameObject.SetActive(false);
+        }
+    }
+
+    public void EnableBackFrame()
+    {
+        backFrame.gameObject.SetActive(true);
+    }
+
+    public void AveragePerish(FoodDisplay fd)
+    {
+        float averagePerish = (perishTime * amount + (fd.perishTime * fd.amount)) / (amount + fd.amount);
+        perishTime = averagePerish;
+        
+    }
 }

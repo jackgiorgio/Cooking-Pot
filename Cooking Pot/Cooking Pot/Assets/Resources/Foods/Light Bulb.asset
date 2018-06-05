@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Light Bulb
   icon: {fileID: 21300000, guid: a9f056095a26d804ab2aaf4e9360b304, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

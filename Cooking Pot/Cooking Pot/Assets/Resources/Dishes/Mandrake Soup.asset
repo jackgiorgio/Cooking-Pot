@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Mandrake Soup
   icon: {fileID: 21300000, guid: 122c760d2482d344fb2e9a8987b43da2, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

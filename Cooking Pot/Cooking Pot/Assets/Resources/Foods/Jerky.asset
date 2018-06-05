@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Jerky
   icon: {fileID: 21300000, guid: dcc7444db423ee546b0e5a1e928b4398, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Koalefant Trunk
   icon: {fileID: 21300000, guid: bfc6760f592e79e4f8d092792ef21575, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

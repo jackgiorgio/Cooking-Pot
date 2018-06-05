@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Lichen
   icon: {fileID: 21300000, guid: 9b3efe89fdf0d9748b28cb2970bd7bfc, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

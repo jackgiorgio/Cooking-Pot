@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Ice
   icon: {fileID: 21300000, guid: 76586352b7e7b1a41bbe38a46a61f4b9, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

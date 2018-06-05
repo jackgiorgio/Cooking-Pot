@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Stuffed Eggplant
   icon: {fileID: 21300000, guid: 0bfc774a4c93b194882f1aed4fccc6b1, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

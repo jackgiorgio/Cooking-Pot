@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Meaty Stew
   icon: {fileID: 21300000, guid: 0f43df75fee605348bec53889cd8c9f4, type: 3}
   isCookable: 0
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

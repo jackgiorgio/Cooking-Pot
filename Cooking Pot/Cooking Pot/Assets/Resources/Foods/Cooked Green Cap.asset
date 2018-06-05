@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Green Cap
   icon: {fileID: 21300000, guid: 5c731a54b0ec7814b882307e3f3e4bb3, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

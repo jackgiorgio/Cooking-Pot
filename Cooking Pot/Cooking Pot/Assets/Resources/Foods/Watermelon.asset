@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Watermelon
   icon: {fileID: 21300000, guid: e6794f59c1f5f104da95d52dccb5a05b, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

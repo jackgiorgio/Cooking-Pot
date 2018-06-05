@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cooked Banana
   icon: {fileID: 21300000, guid: ba7ee5cd31a7ab540bcb55c4d45fe92c, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

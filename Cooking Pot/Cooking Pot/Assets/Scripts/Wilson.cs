@@ -111,12 +111,23 @@ public class Wilson : MonoBehaviour, IDropHandler{
         if (!itemObj & DragHandler.GetItemBeingDragged().isEatable)
         {
             itemObj = DragHandler.objBeingDragged;
-            itemObj.transform.SetParent(transform);
-            itemObj.transform.position = transform.position;
+            Debug.Log(itemObj.GetComponent<ItemDisplay>().Amount);
+            if (itemObj.GetComponent<ItemDisplay>().Amount > 1)
+            {
+                Eat(DragHandler.GetFoodBeingDraged());
+                anim.SetTrigger("eat");
+                itemObj.GetComponent<ItemDisplay>().Amount -= 1;
+                itemObj = null;
+            }
+            else
+            {
+                itemObj.transform.SetParent(transform);
+                itemObj.transform.position = transform.position;
 
-            Eat(DragHandler.GetFoodBeingDraged());
-            anim.SetTrigger("eat");
-            Destroy(itemObj);
+                Eat(DragHandler.GetFoodBeingDraged());
+                anim.SetTrigger("eat");
+                Destroy(itemObj);
+            }
         }
     }
 

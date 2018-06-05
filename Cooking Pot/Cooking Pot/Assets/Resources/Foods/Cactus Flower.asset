@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Cactus Flower
   icon: {fileID: 21300000, guid: 18fb9212d124c4f4aac1db08b66fa408, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 

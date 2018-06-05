@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Popcorn
   icon: {fileID: 21300000, guid: 5d41874f50befa7468dd953d5d418f6c, type: 3}
   isCookable: 1
-  isStackable: 0
+  isStackable: 1
   isEatable: 1
   discoveryText: 
   customSound: 
