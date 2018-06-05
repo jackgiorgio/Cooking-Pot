@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1a91ba83b0af3bb4cb299f8d4089361c
+timeCreated: 1528196379
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: October Crow
+  fontNames:
+  - October Crow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

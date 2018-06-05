@@ -34,13 +34,15 @@ public class Pot : MonoBehaviour {
             potState = PotState.open;
             anim.SetTrigger("Open");
             craftPanel.SetActive(true);
-            return;       
+            AudioManager.instance.Play("pot_open");
+            return; 
         }
         if (potState == PotState.open)
         {
             potState = PotState.idle;
             anim.SetTrigger("Close");
             craftPanel.SetActive(false);
+            AudioManager.instance.Play("pot_close");
 
         }
     }

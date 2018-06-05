@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: f90924851156b1248bd73d09667b7720
+  - enabled: 1
     path: Assets/Scenes/Cooking_Pot.unity
     guid: 4c09fc3ed5d4171409c460397448fc52
