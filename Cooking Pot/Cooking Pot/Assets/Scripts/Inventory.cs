@@ -120,4 +120,22 @@ public class Inventory : MonoBehaviour {
         Debug.LogError("can't find an empty slot!");
         return itemsInInventory.Length;
     }
+
+    public string DebugSpawn(string name)
+    {
+        int emptySlot = GetEmptySlot();
+        
+        if (emptySlot < itemsInInventory.Length & FindItem(name) != null)
+        {
+            AddItem(FindItem(name), emptySlot + 1);
+            string success = name + " added successfully";
+            return success;
+        }
+        if (emptySlot >= itemsInInventory.Length)
+        {
+            return "Not enough space!";
+        }
+        return "Can't find "+ name +"!";
+
+    }
 }

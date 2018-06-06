@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070249865202304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 236.55318, y: 405.91364, z: -4.717328}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    loop: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: pot_open
@@ -109,6 +109,33 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: pot_close
     clip: {fileID: 8300000, guid: 210861eb72032574d8ddfb0cd779a62b, type: 3}
+    volume: 0.498
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: pot_finish
+    clip: {fileID: 8300000, guid: 1deecb5e3b44ce442a7c5fa7354a1566, type: 3}
+    volume: 0.498
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: drop
+    clip: {fileID: 8300000, guid: eccf50bde4c4a95409ae28732bade803, type: 3}
+    volume: 0.498
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: craft
+    clip: {fileID: 8300000, guid: 3d2b1441c30e3e847870e52163e870b2, type: 3}
     volume: 0.498
     volumeVariance: 0
     pitch: 1

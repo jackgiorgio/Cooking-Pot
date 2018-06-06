@@ -76,6 +76,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		objBeingDragged = gameObject;
+        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1.5f);
         if (objBeingDragged.GetComponent<FoodDisplay>())
         {
             objBeingDragged.GetComponent<FoodDisplay>().DisableBackFrame();
@@ -122,8 +123,22 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 if (slot.GetComponentInChildren<FoodDisplay>())
                 {
                     slot.GetComponentInChildren<FoodDisplay>().EnableBackFrame();
+                    slot.ResetTransform();
+                    
                 }
             }
+
+            CrafterSlot crafterSlot = gameObject.GetComponentInParent<CrafterSlot>();
+            if (crafterSlot)
+            {
+                crafterSlot.AddToFoodCrafter();
+                if (crafterSlot.GetComponentInChildren<FoodDisplay>())
+                {
+                    crafterSlot.GetComponentInChildren<FoodDisplay>().EnableBackFrame();
+                    crafterSlot.ResetTransform();
+                }
+            }
+
 
 
         }

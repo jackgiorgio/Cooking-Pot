@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f09845925f346a4998a1f4062880cca, type: 3}
   m_Name: Twigs
   m_EditorClassIdentifier: 
+  itemTpye: 0
   name: Twigs
   icon: {fileID: 21300000, guid: 1b68a08e30bb71a4a95854300f0f0e71, type: 3}
   isCookable: 1
@@ -39,7 +40,7 @@ MonoBehaviour:
   sweetener: 0
   dragonfruit: 0
   corn: 0
-  twigs: 0
+  twigs: 1
   cactusFlower: 0
   frogLegs: 0
   moleWorm: 0

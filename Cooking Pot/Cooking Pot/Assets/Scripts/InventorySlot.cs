@@ -15,10 +15,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     private void Start()
     {
-        //if (itemObj)
-        //{
-        //    AddItemToInventory();
-        //}
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -95,6 +91,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         itemObj = Instantiate(foodPrefab, transform);
         itemObj.transform.SetParent(transform);
         itemObj.GetComponent<FoodDisplay>().food = Inventory.instance.FindFood(_item.name);
+        itemObj.GetComponent<ItemDisplay>().item = Inventory.instance.FindItem(_item.name);
     }
 
     public void InstantiateDishDisplay(Item _item)
@@ -104,6 +101,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         itemObj.GetComponent<DishDisplay>().dish = Inventory.instance.FindDish(_item.name);
         itemObj.GetComponent<DishDisplay>().food = Inventory.instance.FindFood(_item.name);
         itemObj.GetComponent<ItemDisplay>().item = Inventory.instance.FindItem(_item.name);
+    }
+
+    public void ResetTransform()
+    {
+        itemObj.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 
 

@@ -27,12 +27,14 @@ public class CrafterSlot : MonoBehaviour, IDropHandler {
                 itemObj.GetComponent<FoodDisplay>().freshStart = false;
                 itemObj.GetComponent<FoodDisplay>().perishTime = DragHandler.GetFoodDisplay().perishTime;
                 ResetTransform();
+                FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
             }
             else
             {
                 itemObj.transform.SetParent(transform);
                 itemObj.transform.position = transform.position;
                 ResetTransform();
+                FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
             }
             
         }
@@ -65,13 +67,20 @@ public class CrafterSlot : MonoBehaviour, IDropHandler {
         itemObj = Instantiate(foodPrefab, transform);
         itemObj.transform.SetParent(transform);
         itemObj.GetComponent<FoodDisplay>().food = Inventory.instance.FindFood(_item.name);
+        itemObj.GetComponent<ItemDisplay>().item = Inventory.instance.FindItem(_item.name);
     }
 
-    void ResetTransform()
+    public void ResetTransform()
     {
         itemObj.GetComponent<FoodDisplay>().EnableBackFrame();
         itemObj.GetComponent<RectTransform>().localScale = new Vector3(0.8f, 0.8f, 0.8f);
-        FoodCrafter.instance.AddItem(DragHandler.GetFoodBeingDraged(), slot);
+    }
+
+    public void AddToFoodCrafter()
+    {
+        itemObj = transform.GetChild(0).gameObject;
+        FoodDisplay display = itemObj.GetComponent<FoodDisplay>();
+        FoodCrafter.instance.AddItem(display.food, slot);
     }
 
 

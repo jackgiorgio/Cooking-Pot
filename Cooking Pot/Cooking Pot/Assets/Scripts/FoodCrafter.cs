@@ -23,7 +23,7 @@ public class FoodCrafter : MonoBehaviour
 
 	public Dish[] recipes;
 
-	public Transform resultsParent;
+    public Transform resultsParent;
 	public GameObject dishPrefab;
 
 	private List<Food> knownItems;
@@ -99,7 +99,7 @@ public class FoodCrafter : MonoBehaviour
         //yield return new WaitForSeconds(dish.cookTime);
         yield return new WaitForSeconds(1f);
         GameObject dishObj = Instantiate(dishPrefab, resultsParent);
-        dishObj.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
+        dishObj.GetComponent<RectTransform>().localScale = new Vector3(2.5f, 2.5f,2.5f);
 		DishDisplay display = dishObj.GetComponent<DishDisplay>();
         Debug.Log(display.dish.name);
         if (display != null)
@@ -108,7 +108,8 @@ public class FoodCrafter : MonoBehaviour
             display.food = _dish;
             display.Setup(_dish);
             display.DisableBackFrame();
-
+            Discovery.instance.DiscoverDish(_dish);
+            AudioManager.instance.Play("pot_finish");
         }
 
 	}
@@ -393,7 +394,9 @@ public class FoodCrafter : MonoBehaviour
             }
             return null;
         }
-    }
+
+
+}
 
 
 

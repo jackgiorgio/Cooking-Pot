@@ -6,9 +6,22 @@ using UnityEngine.UI;
 
 public class Wilson : MonoBehaviour, IDropHandler{
 
+    #region Singleton
+
+    public static Wilson instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     private Animator anim;
     public GameObject itemObj;
     public Image hungerBar, healthBar, sanityBar;
+    public Text speechText;
+    private bool speekTrigger = false;
 
     [SerializeField]
     private float health;
@@ -106,17 +119,19 @@ public class Wilson : MonoBehaviour, IDropHandler{
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         Health = 15;
         Hunger = 23;
         Sanity = 40;
-        anim = GetComponent<Animator>();
     }
 
     public void Eat(Food food)
     {
+        anim.SetTrigger("eat");
         Health += food.health;
         Hunger += food.hunger;
         Sanity += food.sanity;
+        StartCoroutine(TackAboutFood());
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -132,7 +147,6 @@ public class Wilson : MonoBehaviour, IDropHandler{
             if (itemObj.GetComponent<ItemDisplay>().Amount > 1)
             {
                 Eat(DragHandler.GetFoodBeingDraged());
-                anim.SetTrigger("eat");
                 itemObj.GetComponent<ItemDisplay>().Amount -= 1;
                 itemObj = null;
             }
@@ -142,10 +156,40 @@ public class Wilson : MonoBehaviour, IDropHandler{
                 itemObj.transform.position = transform.position;
 
                 Eat(DragHandler.GetFoodBeingDraged());
-                anim.SetTrigger("eat");
                 Destroy(itemObj);
             }
         }
+    }
+
+
+    private IEnumerator TackAboutFood()
+    {
+        speechText.text = "I feel better";
+        while (!speekTrigger)
+        {
+            speekTrigger = true;
+            yield return new WaitForSeconds(0.8f);
+        }
+        anim.SetTrigger("speak");
+        speekTrigger = false;      
+    }
+
+    private void TalkAboutState()
+    {
+        if (sanity < 30)
+        {
+            speechText.text = "I don't feel so good";
+        }
+        if (hunger < 70)
+        {
+            speechText.text = "I'm starving!";
+        }
+        else
+        {
+            speechText.text = "Let's try something new";
+        }
+        anim.SetTrigger("speak");
+        speekTrigger = false;
     }
 
 
