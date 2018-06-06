@@ -30,7 +30,7 @@ public class FoodCrafter : MonoBehaviour
 
 	private void Start()
 	{
-		recipes = Resources.LoadAll<Dish>("Dishes");
+		recipes = Resources.LoadAll<Dish>("Items");
 
 	}
 

@@ -8,14 +8,17 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     public GameObject itemObj;
 
+    public GameObject foodPrefab;
+    public GameObject dishPrefab;
+
     public int slot;
 
     private void Start()
     {
-        if (itemObj)
-        {
-            AddItemToInventory();
-        }
+        //if (itemObj)
+        //{
+        //    AddItemToInventory();
+        //}
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -49,7 +52,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
             itemObj = DragHandler.objBeingDragged;
             itemObj.transform.SetParent(transform);
-            itemObj.GetComponent<RectTransform>().sizeDelta = new Vector2(90, 90);
+            itemObj.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
             itemObj.transform.position = transform.position;
             if (itemObj)
             {
@@ -87,6 +90,21 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         Inventory.instance.AddItem(display.item, slot);
     }
 
+    public void InstantiateFoodDisplay(Item _item)
+    {
+        itemObj = Instantiate(foodPrefab, transform);
+        itemObj.transform.SetParent(transform);
+        itemObj.GetComponent<FoodDisplay>().food = Inventory.instance.FindFood(_item.name);
+    }
+
+    public void InstantiateDishDisplay(Item _item)
+    {
+        itemObj = Instantiate(dishPrefab, transform);
+        itemObj.transform.SetParent(transform);
+        itemObj.GetComponent<DishDisplay>().dish = Inventory.instance.FindDish(_item.name);
+        itemObj.GetComponent<DishDisplay>().food = Inventory.instance.FindFood(_item.name);
+        itemObj.GetComponent<ItemDisplay>().item = Inventory.instance.FindItem(_item.name);
+    }
 
 
 }

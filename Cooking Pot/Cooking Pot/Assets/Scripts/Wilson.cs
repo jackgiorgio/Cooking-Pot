@@ -123,10 +123,12 @@ public class Wilson : MonoBehaviour, IDropHandler{
     {
         Debug.Log("OnDrop");
 
+        //如果物品槽为空，而且可以吃，则吃掉
         if (!itemObj & DragHandler.GetItemBeingDragged().isEatable)
         {
             itemObj = DragHandler.objBeingDragged;
             Debug.Log(itemObj.GetComponent<ItemDisplay>().Amount);
+            //如果食品不止一个，则直接减少一个
             if (itemObj.GetComponent<ItemDisplay>().Amount > 1)
             {
                 Eat(DragHandler.GetFoodBeingDraged());

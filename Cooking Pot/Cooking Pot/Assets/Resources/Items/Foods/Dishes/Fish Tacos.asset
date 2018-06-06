@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810438531fee54c4eb2e5cda14cedec3, type: 3}
+  m_Name: Fish Tacos
+  m_EditorClassIdentifier: 
+  itemTpye: 1
+  name: Fish Tacos
+  icon: {fileID: 21300000, guid: 6d3f21a528e865b45888953f0a43236d, type: 3}
+  isCookable: 0
+  isStackable: 1
+  isEatable: 1
+  discoveryText: 
+  customSound: 
+  cookable: 0
+  health: 20
+  hunger: 37.5
+  sanity: 5
+  perish: 6
+  fruit: 0
+  egg: 0
+  meat: 0
+  veggie: 0
+  fish: 0
+  inedible: 0
+  banana: 0
+  frozen: 0
+  limpets: 0
+  butterflyWing: 0
+  Seaweed: 0
+  roastedCoffeeBeans: 0
+  dairy: 0
+  sweetener: 0
+  dragonfruit: 0
+  corn: 0
+  twigs: 0
+  cactusFlower: 0
+  frogLegs: 0
+  moleWorm: 0
+  cactusFresh: 0
+  honey: 0
+  jellyfish: 0
+  monster: 0
+  wobster: 0
+  butter: 0
+  mandrake: 0
+  watermelon: 0
+  pumpkin: 0
+  sharkFin: 0
+  eggplant: 0
+  roastedBirchnut: 0
+  seed: 0
+  berries: 0
+  drumstick: 0
+  lichen: 0
+  eel: 0
+  reignOfGiants: 0
+  shipWrecked: 0
+  priority: 10
+  cookTime: 10

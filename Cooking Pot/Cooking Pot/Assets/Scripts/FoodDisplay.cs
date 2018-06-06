@@ -6,6 +6,7 @@ using TMPro;
 
 public class FoodDisplay : ItemDisplay
 {
+    public bool freshStart = true;
     public Food food;
     public float perishTime;
     public Image backFrame;
@@ -50,9 +51,13 @@ public class FoodDisplay : ItemDisplay
     {
         icon.sprite = item.icon;
         nameText.text = item.name;
-        perishTime = food.perish * 480;
+        if (freshStart)
+        {
+            perishTime = food.perish * 480;
+            freshStart = false;
+        }
         Amount = amount;
-        if (perishTime > 0 & food.perish !=0)
+        if (perishTime > 0 & food.perish != 0)
         {
             CountTime(perishTime);
         }
@@ -95,4 +100,5 @@ public class FoodDisplay : ItemDisplay
         perishTime = averagePerish;
         
     }
+
 }
